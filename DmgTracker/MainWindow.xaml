@@ -39,13 +39,13 @@
             <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcMedium"/>
             <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcLong"/>
 
-            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppShort"/>
-            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppMedium"/>
-            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppLong"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="apShort"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="apMedium"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="apLong"/>
 
-            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damShort"/>
-            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damMedium"/>
-            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damLong"/>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="dmgShort"/>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="dmgMedium"/>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="dmgLong"/>
 
         </Grid>
 
@@ -76,23 +76,23 @@
             <Label HorizontalContentAlignment="Center" Grid.Column="3">Assault</Label>
             <Label HorizontalContentAlignment="Center" Grid.Column="4">Sniper</Label>
 
-            <Button Grid.Column="1" Grid.Row="1" Name="mm9" Click="mm9_Click">9 mm</Button>
-            <Button Grid.Column="1" Grid.Row="2" Name="acp45" Click="acp45_Click">.45 ACP</Button>
-            <Button Grid.Column="1" Grid.Row="3" Name="mm10" Click="mm10_Click">10 mm</Button>
-            <Button Grid.Column="1" Grid.Row="4" Name="ae50" Click="ae50_Click">.50 AE</Button>
+            <Button Grid.Column="1" Grid.Row="1" Name="mm9Button" Click="OnAmmoClick">9 mm</Button>
+            <Button Grid.Column="1" Grid.Row="2" Name="acp45Button" Click="OnAmmoClick">.45 ACP</Button>
+            <Button Grid.Column="1" Grid.Row="3" Name="mm10Button" Click="OnAmmoClick">10 mm</Button>
+            <Button Grid.Column="1" Grid.Row="4" Name="ae50Button" Click="OnAmmoClick">.50 AE</Button>
 
-            <Button Grid.Column="2" Grid.Row="2" Name="mag357" Click="mag357_Click">.357 Magnum</Button>
-            <Button Grid.Column="2" Grid.Row="3" Name="mag44" Click="mag44_Click">.44 Magnum</Button>
-            <Button Grid.Column="2" Grid.Row="4" Name="mag500" Click="mag500_Click">.500 S&amp;W Magnum</Button>
+            <Button Grid.Column="2" Grid.Row="2" Name="mag357Button" Click="OnAmmoClick">.357 Magnum</Button>
+            <Button Grid.Column="2" Grid.Row="3" Name="mag44Button" Click="OnAmmoClick">.44 Magnum</Button>
+            <Button Grid.Column="2" Grid.Row="4" Name="mag500Button" Click="OnAmmoClick">.500 S&amp;W Magnum</Button>
 
-            <Button Grid.Column="3" Grid.Row="1" Name="mm556" Click="mm556_Click">5.56x45 mm</Button>
-            <Button Grid.Column="3" Grid.Row="2" Name="grendel" Click="grendel_Click">6.5 mm Grendel</Button>
-            <Button Grid.Column="3" Grid.Row="3" Name="mm762" Click="mm762_Click">7.62x51 mm</Button>
-            <Button Grid.Column="3" Grid.Row="4" Name="blackout" Click="blackout_Click">.300 Blackout</Button>
+            <Button Grid.Column="3" Grid.Row="1" Name="mm556Button" Click="OnAmmoClick">5.56x45 mm</Button>
+            <Button Grid.Column="3" Grid.Row="2" Name="grendelButton" Click="OnAmmoClick">6.5 mm Grendel</Button>
+            <Button Grid.Column="3" Grid.Row="3" Name="mm762Button" Click="OnAmmoClick">7.62x51 mm</Button>
+            <Button Grid.Column="3" Grid.Row="4" Name="blackoutButton" Click="OnAmmoClick">.300 Blackout</Button>
 
-            <Button Grid.Column="4" Grid.Row="2" Name="winmag" Click="winmag_Click">.300 Win Mag</Button>
-            <Button Grid.Column="4" Grid.Row="3" Name="lapmag" Click="lapmag_Click">.338 Lapua Magnum</Button>
-            <Button Grid.Column="4" Grid.Row="4" Name="bmg" Click="bmg_Click">.50 BMG</Button>
+            <Button Grid.Column="4" Grid.Row="2" Name="winmagButton" Click="OnAmmoClick">.300 Win Mag</Button>
+            <Button Grid.Column="4" Grid.Row="3" Name="lapmagButton" Click="OnAmmoClick">.338 Lapua Magnum</Button>
+            <Button Grid.Column="4" Grid.Row="4" Name="bmgButton" Click="OnAmmoClick">.50 BMG</Button>
 
 
         </Grid>

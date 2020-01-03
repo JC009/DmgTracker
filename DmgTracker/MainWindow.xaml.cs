@@ -19,19 +19,35 @@ namespace DmgTracker
     {
         public Button ammo;
 
+        public SolidColorBrush brush;
+
         public List<Button> buttons;
 
-        public SolidColorBrush brush;
+        public List<List<int>> stats;
+
+        public List<TextBlock> blocks;
 
         public MainWindow()
         {
             InitializeComponent();
 
             buttons = new List<Button>() {
-                mm9, acp45, mm10, ae50,
-                mag357, mag44, mag500,
-                mm556, grendel, mm762, blackout,
-                winmag, lapmag, bmg};
+                mm9Button, acp45Button, mm10Button, ae50Button,
+                mag357Button, mag44Button, mag500Button,
+                mm556Button, grendelButton, mm762Button, blackoutButton,
+                winmagButton, lapmagButton, bmgButton};
+
+            blocks = new List<TextBlock>() {
+                prcShort, prcMedium, prcLong,
+                apShort, apMedium, apLong,
+                dmgShort, dmgMedium, dmgLong
+            };
+
+            stats = new List<List<int>>() {
+                MM9.stats, ACP45.stats, MM10.stats, AE50.stats,
+                MAG357.stats, MAG44.stats, MAG500.stats,
+                MM556.stats, GRENDEL.stats, MM762.stats, BLACKOUT.stats,
+                WINMAG.stats, LAPMAG.stats, BMG.stats };
 
             brush = new SolidColorBrush(Color.FromRgb(221, 221, 221));
         }
@@ -54,8 +70,70 @@ namespace DmgTracker
             CheckMedium.IsChecked = false;
         }
 
-        private void OnAmmoClick(Button button)
+        private void OnAmmoClick(object sender, RoutedEventArgs e)
         {
+            int ammoType = 0;
+
+            Button button = mm9Button;
+
+            if (sender == mm9Button)
+            {
+                ammoType = 0;
+                button = mm9Button;
+            } else if (sender == acp45Button)
+            {
+                ammoType = 1;
+                button = acp45Button;
+            } else if (sender == mm10Button)
+            {
+                ammoType = 2;
+                button = mm10Button;
+            } else if (sender == ae50Button)
+            {
+                ammoType = 3;
+                button = ae50Button;
+            } else if (sender == mag357Button)
+            {
+                ammoType = 4;
+                button = mag357Button;
+            } else if (sender == mag44Button)
+            {
+                ammoType = 5;
+                button = mag44Button;
+            } else if (sender == mag500Button)
+            {
+                ammoType = 6;
+                button = mag500Button;
+            } else if (sender == mm556Button)
+            {
+                ammoType = 7;
+                button = mm556Button;
+            } else if (sender == grendelButton)
+            {
+                ammoType = 8;
+                button = grendelButton;
+            } else if (sender == mm762Button)
+            {
+                ammoType = 9;
+                button = mm762Button;
+            } else if (sender == blackoutButton)
+            {
+                ammoType = 10;
+                button = blackoutButton;
+            } else if (sender == winmagButton)
+            {
+                ammoType = 11;
+                button = winmagButton;
+            } else if (sender == lapmagButton)
+            {
+                ammoType = 12;
+                button = lapmagButton;
+            } else if (sender == bmgButton)
+            {
+                ammoType = 13;
+                button = bmgButton;
+            }
+
             foreach (Button tempButton in buttons)
             {
                 tempButton.Background = brush;
@@ -64,77 +142,11 @@ namespace DmgTracker
             button.Background = Brushes.Gray;
 
             ammo = button;
-        }
 
-        private void mm9_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(mm9);
-        }
-
-        
-        private void acp45_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(acp45);
-        }      
-
-        private void mm10_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(mm10);
-        }
-
-        private void ae50_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(ae50);
-        }
-
-        private void mag357_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(mag357);
-        }
-
-        private void mag44_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(mag44);
-        }
-
-        private void mag500_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(mag500);
-        }
-
-        private void mm556_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(mm556);
-        }
-
-        private void grendel_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(grendel);
-        }
-
-        private void mm762_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(mm762);
-        }
-
-        private void blackout_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(blackout);
-        }
-
-        private void winmag_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(winmag);
-        }
-
-        private void lapmag_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(lapmag);
-        }
-
-        private void bmg_Click(object sender, RoutedEventArgs e)
-        {
-            OnAmmoClick(bmg);
+            for (int i = 0; i < blocks.Count; i++)
+            {
+                blocks[i].Text = stats[ammoType][i].ToString();
+            }
         }
     }
 }
