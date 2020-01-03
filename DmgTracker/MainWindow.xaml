@@ -9,7 +9,7 @@
         MinHeight="400" MinWidth="600"
         MaxHeight="400" MaxWidth="600">
 
-    <TabControl>
+    <TabControl x:Name="Tabs">
         <TabItem Header="Damage 1">
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
@@ -293,7 +293,7 @@
                     <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock> Rounds <LineBreak/> on Target</TextBlock>
                     </Label>
-                    <ComboBox Grid.Row="1" Grid.Column="1" Width="50" Height="25" SelectionChanged="RoundsOnTargetCombo_SelectionChanged">
+                    <ComboBox Grid.Row="1" Grid.Column="1" Width="50" Height="25" Name="RoundsOnTargetCombo2" SelectionChanged="RoundsOnTargetCombo_SelectionChanged">
                         <ComboBoxItem IsSelected="True">1</ComboBoxItem>
                         <ComboBoxItem>2</ComboBoxItem>
                         <ComboBoxItem>3</ComboBoxItem>
@@ -320,7 +320,7 @@
                         <TextBlock> Enemy <LineBreak/> Armor</TextBlock>
                     </Label>
 
-                    <ComboBox Grid.Row="0" Grid.Column="1" Width="50" Height="25" SelectionChanged="EnemyArmorCombo_SelectionChanged">
+                    <ComboBox Grid.Row="0" Grid.Column="1" Width="50" Height="25" Name="EnemyArmorCombo2" SelectionChanged="EnemyArmorCombo_SelectionChanged">
                         <ComboBoxItem IsSelected="True">1</ComboBoxItem>
                         <ComboBoxItem>2</ComboBoxItem>
                         <ComboBoxItem>3</ComboBoxItem>

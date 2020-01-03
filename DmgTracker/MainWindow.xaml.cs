@@ -55,7 +55,6 @@ namespace DmgTracker
                 dmgShort2, dmgMedium2, dmgLong2,
                 numShort2, numMedium2, numLong2 };
         
-
             stats = new List<List<int>>() {
                 MM9.stats, ACP45.stats, MM10.stats, AE50.stats,
                 MAG357.stats, MAG44.stats, MAG500.stats,
@@ -66,6 +65,8 @@ namespace DmgTracker
             brush = new SolidColorBrush(Color.FromRgb(221, 221, 221));
 
             CheckShort.IsChecked = true;
+
+            CheckShort2.IsChecked = true;
 
             ButtonAutomationPeer peer =  new ButtonAutomationPeer(mm9Button);
 
@@ -248,25 +249,45 @@ namespace DmgTracker
 
         private void CalculateHit()
         {
-            if (CheckShort.IsChecked == true)
-            {
-                ShotsHit.Content = ChanceToHit(3);
+            if (ammoType <= 13)
+                if (CheckShort.IsChecked == true)
+                {
+                    ShotsHit.Content = ChanceToHit(3, 1);
+                }
+                else if (CheckMedium.IsChecked == true)
+                {
+                   ShotsHit.Content = ChanceToHit(4, 1);
+                }
+                else if (CheckLong.IsChecked == true)
+                {
+                    ShotsHit.Content = ChanceToHit(5, 1);
+                }
 
-            }
-            else if (CheckMedium.IsChecked == true)
-            {
-                ShotsHit.Content = ChanceToHit(4);
-            }
-            else if (CheckLong.IsChecked == true)
-            {
-                ShotsHit.Content = ChanceToHit(5);
-            }
+            if(ammoType > 13)
+                if (CheckShort2.IsChecked == true)
+                {
+                    ShotsHit2.Content = ChanceToHit(3, 2);
+                }
+                else if (CheckMedium2.IsChecked == true)
+                {
+                    ShotsHit2.Content = ChanceToHit(4, 2);
+                }
+                else if (CheckLong2.IsChecked == true)
+                {
+                    ShotsHit2.Content = ChanceToHit(5, 2);
+                }
         }
 
-        private string ChanceToHit(int range)
+        private string ChanceToHit(int range, int tab)
         {
             int shot = stats[ammoType][range];
-            int armor = Int32.Parse(EnemyArmorCombo.Text);
+            int armor = 1;
+
+            if (tab == 1)
+                armor = Int32.Parse(EnemyArmorCombo.Text);
+
+            if (tab == 2)
+                armor = Int32.Parse(EnemyArmorCombo2.Text);
 
             int result = armor - shot;
 
@@ -281,34 +302,79 @@ namespace DmgTracker
 
         private void CalculateDamage()
         {
-            if (CheckShort.IsChecked == true)
-            {
-                Damage.Content = RawDamage(6);
+            if (ammoType <= 13)
+                if (CheckShort.IsChecked == true)
+                {
+                    Damage.Content = RawDamage(6, 1);
 
-            }
-            else if (CheckMedium.IsChecked == true)
-            {
-                Damage.Content = RawDamage(7);
-            }
-            else if (CheckLong.IsChecked == true)
-            {
-                Damage.Content = RawDamage(8);
-            }
+                }
+                else if (CheckMedium.IsChecked == true)
+                {
+                    Damage.Content = RawDamage(7, 1);
+                }
+                else if (CheckLong.IsChecked == true)
+                {
+                    Damage.Content = RawDamage(8, 1);
+                }
+
+            if (ammoType > 13)
+                if (CheckShort2.IsChecked == true)
+                {
+                    Damage2.Content = RawDamage(6, 2);
+
+                }
+                else if (CheckMedium2.IsChecked == true)
+                {
+                    Damage2.Content = RawDamage(7, 2);
+                }
+                else if (CheckLong2.IsChecked == true)
+                {
+                    Damage2.Content = RawDamage(8, 2);
+                }
         }
 
-        private double RawDamage(int singleShotDamage)
+        private double RawDamage(int singleShotDamage, int tab)
         {
             double singleDamage = stats[ammoType][singleShotDamage];
-            double rateOfFire = Double.Parse(RoundsOnTargetCombo.Text);
-            string shotsHit = ShotsHit.Content.ToString();
+            double rateOfFire = 1;
+            string shotsHit = "1";
+            double numberOfShots = 1;
 
-            if (shotsHit == "None")
-                return 0;
+            if (tab == 1)
+            {
+                rateOfFire = Double.Parse(RoundsOnTargetCombo.Text);
 
-            if (shotsHit == "All")
-                return singleDamage * rateOfFire;
+                shotsHit = ShotsHit.Content.ToString();
 
-            return Math.Round(((singleDamage * rateOfFire) / Double.Parse(shotsHit)), 2);
+                if (shotsHit == "None")
+                    return 0;
+
+                if (shotsHit == "All")
+                    return singleDamage * rateOfFire;
+
+                return Math.Round(((singleDamage * rateOfFire) / Double.Parse(shotsHit)), 2);
+            }
+                
+
+            if (tab == 2)
+            {
+                rateOfFire = Double.Parse(RoundsOnTargetCombo2.Text);
+
+                shotsHit = ShotsHit2.Content.ToString();
+
+                numberOfShots = stats[ammoType][singleShotDamage + 3];
+
+                if (shotsHit == "None")
+                    return 0;
+
+                if (shotsHit == "All")
+                    return singleDamage * rateOfFire * numberOfShots;
+
+                return Math.Round(((singleDamage * rateOfFire * numberOfShots) / Double.Parse(shotsHit)), 2);
+            }
+
+
+            return 99;
         }
 
     }
