@@ -34,6 +34,8 @@ namespace DmgTracker
                 winmag, lapmag, bmg};
 
             brush = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+           
         }
 
         private void CheckShort_Checked(object sender, RoutedEventArgs e)

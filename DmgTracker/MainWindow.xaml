@@ -43,6 +43,10 @@
             <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppMedium"/>
             <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppLong"/>
 
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damClose"/>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damMedium"/>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damLong"/>
+
         </Grid>
 
         <Grid Margin="10,10,10,200" >
