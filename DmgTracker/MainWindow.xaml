@@ -22,14 +22,14 @@
                 <RowDefinition Height="30" />
                 <RowDefinition Height="30" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="0">Dystans</Label>
-            <Label Grid.Row="1">Krótki</Label>
-            <Label Grid.Row="2">Średni</Label>
-            <Label Grid.Row="3">Długi</Label>
+            <Label Grid.Row="0">Distance</Label>
+            <Label Grid.Row="1">Short</Label>
+            <Label Grid.Row="2">Medium</Label>
+            <Label Grid.Row="3">Long</Label>
 
             <Label Grid.Row="0" Grid.Column="2" Content="PRC" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="18"/>
-            <Label Grid.Row="0" Grid.Column="3" Content="PP" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
-            <Label Grid.Row="0" Grid.Column="4" Content="OBR" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+            <Label Grid.Row="0" Grid.Column="3" Content="AP" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+            <Label Grid.Row="0" Grid.Column="4" Content="DMG" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
 
             <CheckBox Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Name="CheckShort" Checked="CheckShort_Checked"/>
             <CheckBox Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckMedium" Checked="CheckMedium_Checked"/>
@@ -65,16 +65,16 @@
                 <RowDefinition Height="30" />
                 <RowDefinition Height="30" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="0">Amunicja</Label>
-            <Label Grid.Row="1">Lekka</Label>
-            <Label Grid.Row="2">Średnia</Label>
-            <Label Grid.Row="3">Ciężka</Label>
-            <Label Grid.Row="4">Śpecjalna</Label>
+            <Label Grid.Row="0">Ammunition</Label>
+            <Label Grid.Row="1">Light</Label>
+            <Label Grid.Row="2">Medium</Label>
+            <Label Grid.Row="3">Heavy</Label>
+            <Label Grid.Row="4">Special</Label>
 
-            <Label HorizontalContentAlignment="Center" Grid.Column="1">Pistoletowa</Label>
-            <Label HorizontalContentAlignment="Center" Grid.Column="2">Rewolwerowa</Label>
-            <Label HorizontalContentAlignment="Center" Grid.Column="3">Karabinowa</Label>
-            <Label HorizontalContentAlignment="Center" Grid.Column="4">Snajperska</Label>
+            <Label HorizontalContentAlignment="Center" Grid.Column="1">Pistol</Label>
+            <Label HorizontalContentAlignment="Center" Grid.Column="2">Revolver</Label>
+            <Label HorizontalContentAlignment="Center" Grid.Column="3">Assault</Label>
+            <Label HorizontalContentAlignment="Center" Grid.Column="4">Sniper</Label>
 
             <Button Grid.Column="1" Grid.Row="1" Name="mm9" Click="mm9_Click">9 mm</Button>
             <Button Grid.Column="1" Grid.Row="2" Name="acp45" Click="acp45_Click">.45 ACP</Button>
