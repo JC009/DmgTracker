@@ -1,0 +1,17 @@
+E:\VisualProjekty\DmgTracker\DmgTracker\bin\Debug\netcoreapp3.1\DmgTracker.exe
+E:\VisualProjekty\DmgTracker\DmgTracker\bin\Debug\netcoreapp3.1\DmgTracker.deps.json
+E:\VisualProjekty\DmgTracker\DmgTracker\bin\Debug\netcoreapp3.1\DmgTracker.runtimeconfig.json
+E:\VisualProjekty\DmgTracker\DmgTracker\bin\Debug\netcoreapp3.1\DmgTracker.runtimeconfig.dev.json
+E:\VisualProjekty\DmgTracker\DmgTracker\bin\Debug\netcoreapp3.1\DmgTracker.dll
+E:\VisualProjekty\DmgTracker\DmgTracker\bin\Debug\netcoreapp3.1\DmgTracker.pdb
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\DmgTracker.csprojAssemblyReference.cache
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\App.g.cs
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\DmgTracker_MarkupCompile.cache
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\DmgTracker_MarkupCompile.lref
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\MainWindow.baml
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\DmgTracker.g.resources
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\DmgTracker.AssemblyInfoInputs.cache
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\DmgTracker.AssemblyInfo.cs
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\DmgTracker.dll
+E:\VisualProjekty\DmgTracker\DmgTracker\obj\Debug\netcoreapp3.1\DmgTracker.pdb

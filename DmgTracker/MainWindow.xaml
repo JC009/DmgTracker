@@ -1,0 +1,96 @@
+﻿<Window x:Class="DmgTracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DmgTracker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="370" Width="546">
+    <Grid Height="360">
+
+        <Grid Margin="10,170,260,70">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0">Dystans</Label>
+            <Label Grid.Row="1">Krótki</Label>
+            <Label Grid.Row="2">Średni</Label>
+            <Label Grid.Row="3">Długi</Label>
+
+            <Label Grid.Row="0" Grid.Column="2" Content="PRC" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="18"/>
+            <Label Grid.Row="0" Grid.Column="3" Content="PP" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+            <Label Grid.Row="0" Grid.Column="4" Content="OBR" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+
+            <CheckBox Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Name="CheckShort" Checked="CheckShort_Checked"/>
+            <CheckBox Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckMedium" Checked="CheckMedium_Checked"/>
+            <CheckBox Grid.Row="3" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckLong" Checked="CheckLong_Checked"/>
+
+            <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcClose"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcMedium"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcLong"/>
+
+            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppClose"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppMedium"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppLong"/>
+
+        </Grid>
+
+        <Grid Margin="10,10,10,200" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0">Amunicja</Label>
+            <Label Grid.Row="1">Lekka</Label>
+            <Label Grid.Row="2">Średnia</Label>
+            <Label Grid.Row="3">Ciężka</Label>
+            <Label Grid.Row="4">Śpecjalna</Label>
+
+            <Label HorizontalContentAlignment="Center" Grid.Column="1">Pistoletowa</Label>
+            <Label HorizontalContentAlignment="Center" Grid.Column="2">Rewolwerowa</Label>
+            <Label HorizontalContentAlignment="Center" Grid.Column="3">Karabinowa</Label>
+            <Label HorizontalContentAlignment="Center" Grid.Column="4">Snajperska</Label>
+
+            <Button Grid.Column="1" Grid.Row="1" Name="mm9" Click="mm9_Click">9 mm</Button>
+            <Button Grid.Column="1" Grid.Row="2" Name="acp45" Click="acp45_Click">.45 ACP</Button>
+            <Button Grid.Column="1" Grid.Row="3" Name="mm10" Click="mm10_Click">10 mm</Button>
+            <Button Grid.Column="1" Grid.Row="4" Name="ae50" Click="ae50_Click">.50 AE</Button>
+
+            <Button Grid.Column="2" Grid.Row="2" Name="mag357" Click="mag357_Click">.357 Magnum</Button>
+            <Button Grid.Column="2" Grid.Row="3" Name="mag44" Click="mag44_Click">.44 Magnum</Button>
+            <Button Grid.Column="2" Grid.Row="4" Name="mag500" Click="mag500_Click">.500 S&amp;W Magnum</Button>
+
+            <Button Grid.Column="3" Grid.Row="1" Name="mm556" Click="mm556_Click">5.56x45 mm</Button>
+            <Button Grid.Column="3" Grid.Row="2" Name="grendel" Click="grendel_Click">6.5 mm Grendel</Button>
+            <Button Grid.Column="3" Grid.Row="3" Name="mm762" Click="mm762_Click">7.62x51 mm</Button>
+            <Button Grid.Column="3" Grid.Row="4" Name="blackout" Click="blackout_Click">.300 Blackout</Button>
+
+            <Button Grid.Column="4" Grid.Row="2" Name="winmag" Click="winmag_Click">.300 Win Mag</Button>
+            <Button Grid.Column="4" Grid.Row="3" Name="lapmag" Click="lapmag_Click">.338 Lapua Magnum</Button>
+            <Button Grid.Column="4" Grid.Row="4" Name="bmg" Click="bmg_Click">.50 BMG</Button>
+
+
+        </Grid>
+    </Grid>
+</Window>
