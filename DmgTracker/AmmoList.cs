@@ -4,232 +4,278 @@ using System.Text;
 
 namespace DmgTracker
 {
-    enum MM9
+    public static class MM9
     {
-        PrcShort = 0,
-        PrcMedium = -2,
-        PrcLong = -6,
+        public const int PrcShort = 0;
+        public const int PrcMedium = -2;
+        public const int PrcLong = -6;
 
-        ApShort = 2,
-        ApMedium = 2,
-        ApLong = 0,
+        public const int ApShort = 2;
+        public const int ApMedium = 2;
+        public const int ApLong = 0;
 
-        DmgShort = 3,
-        DmgMedium = 3,
-        DmgLong = 2,
+        public const int DmgShort = 3;
+        public const int DmgMedium = 3;
+        public const int DmgLong = 2;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum ACP45
+    public static class ACP45
     {
-        PrcShort = 0,
-        PrcMedium = -3,
-        PrcLong = -7,
+        public const int PrcShort = 0;
+        public const int PrcMedium = -3;
+        public const int PrcLong = -7;
 
-        ApShort = 2,
-        ApMedium = 2,
-        ApLong = 0,
+        public const int ApShort = 2;
+        public const int ApMedium = 2;
+        public const int ApLong = 0;
 
-        DmgShort = 4,
-        DmgMedium = 4,
-        DmgLong = 2
+        public const int DmgShort = 4;
+        public const int DmgMedium = 4;
+        public const int DmgLong = 2;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum MM10
+    public static class MM10
     {
-        PrcShort = 0,
-        PrcMedium = -2,
-        PrcLong = -6,
+        public const int PrcShort = 0;
+        public const int PrcMedium = -2;
+        public const int PrcLong = -6;
 
-        ApShort = 2,
-        ApMedium = 2,
-        ApLong = 0,
+        public const int ApShort = 2;
+        public const int ApMedium = 2;
+        public const int ApLong = 0;
 
-        DmgShort = 4,
-        DmgMedium = 4,
-        DmgLong = 2
+        public const int DmgShort = 4;
+        public const int DmgMedium = 4;
+        public const int DmgLong = 2;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum AE50
+    public static class AE50
     {
-        PrcShort = 0,
-        PrcMedium = -2,
-        PrcLong = -5,
+        public const int PrcShort = 0;
+        public const int PrcMedium = -2;
+        public const int PrcLong = -5;
 
-        ApShort = 4,
-        ApMedium = 4,
-        ApLong = 1,
+        public const int ApShort = 4;
+        public const int ApMedium = 4;
+        public const int ApLong = 1;
 
-        DmgShort = 8,
-        DmgMedium = 7,
-        DmgLong = 5
+        public const int DmgShort = 8;
+        public const int DmgMedium = 7;
+        public const int DmgLong = 5;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum MAG357
+    public static class MAG357
     {
-        PrcShort = 0,
-        PrcMedium = -2,
-        PrcLong = -6,
+        public const int PrcShort = 0;
+        public const int PrcMedium = -2;
+        public const int PrcLong = -6;
 
-        ApShort = 3,
-        ApMedium = 3,
-        ApLong = 1,
+        public const int ApShort = 3;
+        public const int ApMedium = 3;
+        public const int ApLong = 1;
 
-        DmgShort = 5,
-        DmgMedium = 5,
-        DmgLong = 4
+        public const int DmgShort = 5;
+        public const int DmgMedium = 5;
+        public const int DmgLong = 4;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum MAG44
+    public static class MAG44
     {
-        PrcShort = 0,
-        PrcMedium = -2,
-        PrcLong = -6,
+        public const int PrcShort = 0;
+        public const int PrcMedium = -2;
+        public const int PrcLong = -6;
 
-        ApShort = 4,
-        ApMedium = 4,
-        ApLong = 2,
+        public const int ApShort = 4;
+        public const int ApMedium = 4;
+        public const int ApLong = 2;
 
-        DmgShort = 6,
-        DmgMedium = 6, 
-        DmgLong = 5
+        public const int DmgShort = 6;
+        public const int DmgMedium = 6;
+        public const int DmgLong = 5;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum MAG500
+    public static class MAG500
     {
-        PrcShort = 0,
-        PrcMedium = -2,
-        PrcLong = -5,
+        public const int PrcShort = 0;
+        public const int PrcMedium = -2;
+        public const int PrcLong = -5;
 
-        ApShort = 5,
-        ApMedium = 5,
-        ApLong = 2,
+        public const int ApShort = 5;
+        public const int ApMedium = 5;
+        public const int ApLong = 2;
 
-        DmgShort = 10,
-        DmgMedium = 9,
-        DmgLong = 8
+        public const int DmgShort = 10;
+        public const int DmgMedium = 9;
+        public const int DmgLong = 8;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum MM556
+    public static class MM556
     {
-        PrcShort = 0,
-        PrcMedium = 0,
-        PrcLong = -1,
+        public const int PrcShort = 0;
+        public const int PrcMedium = 0;
+        public const int PrcLong = -1;
 
-        ApShort = 4,
-        ApMedium = 4,
-        ApLong = 4,
+        public const int ApShort = 4;
+        public const int ApMedium = 4;
+        public const int ApLong = 4;
 
-        DmgShort = 4,
-        DmgMedium = 4,
-        DmgLong = 4
+        public const int DmgShort = 4;
+        public const int DmgMedium = 4;
+        public const int DmgLong = 4;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum GRENDEL
+    public static class GRENDEL
     {
-        PrcShort = 0,
-        PrcMedium = 0,
-        PrcLong = -3,
+        public const int PrcShort = 0;
+        public const int PrcMedium = 0;
+        public const int PrcLong = -3;
 
-        ApShort = 4,
-        ApMedium = 4,
-        ApLong = 3,
+        public const int ApShort = 4;
+        public const int ApMedium = 4;
+        public const int ApLong = 3;
 
-        DmgShort = 5,
-        DmgMedium = 5,
-        DmgLong = 5
+        public const int DmgShort = 5;
+        public const int DmgMedium = 5;
+        public const int DmgLong = 5;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum MM762
+    public static class MM762
     {
-        PrcShort = 0,
-        PrcMedium = 0,
-        PrcLong = -1,
+        public const int PrcShort = 0;
+        public const int PrcMedium = 0;
+        public const int PrcLong = -1;
 
-        ApShort = 5,
-        ApMedium = 5,
-        ApLong = 5,
+        public const int ApShort = 5;
+        public const int ApMedium = 5;
+        public const int ApLong = 5;
 
-        DmgShort = 5,
-        DmgMedium = 5,
-        DmgLong = 5
+        public const int DmgShort = 5;
+        public const int DmgMedium = 5;
+        public const int DmgLong = 5;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum BLACKOUT
+    public static class BLACKOUT
     {
-        PrcShort = 0,
-        PrcMedium = 0,
-        PrcLong = -4,
+        public const int PrcShort = 0;
+        public const int PrcMedium = 0;
+        public const int PrcLong = -4;
 
-        ApShort = 4,
-        ApMedium = 3,
-        ApLong = 3,
+        public const int ApShort = 4;
+        public const int ApMedium = 3;
+        public const int ApLong = 3;
 
-        DmgShort = 4,
-        DmgMedium = 4,
-        DmgLong = 3
+        public const int DmgShort = 4;
+        public const int DmgMedium = 4;
+        public const int DmgLong = 3;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum WINMAG
+    public static class WINMAG
     {
-        PrcShort = 0,
-        PrcMedium = 0,
-        PrcLong = 0,
+        public const int PrcShort = 0;
+        public const int PrcMedium = 0;
+        public const int PrcLong = 0;
 
-        ApShort = 7,
-        ApMedium = 7,
-        ApLong = 7,
+        public const int ApShort = 7;
+        public const int ApMedium = 7;
+        public const int ApLong = 7;
 
-        DmgShort = 10,
-        DmgMedium = 10,
-        DmgLong = 10
+        public const int DmgShort = 10;
+        public const int DmgMedium = 10;
+        public const int DmgLong = 10;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum LAPMAG
+    public static class LAPMAG
     {
-        PrcShort = 0,
-        PrcMedium = 0,
-        PrcLong = 0,
+        public const int PrcShort = 0;
+        public const int PrcMedium = 0;
+        public const int PrcLong = 0;
 
-        ApShort = 8,
-        ApMedium = 8,
-        ApLong = 8,
+        public const int ApShort = 8;
+        public const int ApMedium = 8;
+        public const int ApLong = 8;
 
-        DmgShort = 14,
-        DmgMedium = 14,
-        DmgLong = 14
+        public const int DmgShort = 14;
+        public const int DmgMedium = 14;
+        public const int DmgLong = 14;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum BMG
+    public static class BMG
     {
-        PrcShort = 0,
-        PrcMedium = 0,
-        PrcLong = 0,
+        public const int PrcShort = 0;
+        public const int PrcMedium = 0;
+        public const int PrcLong = 0;
 
-        ApShort = 15,
-        ApMedium = 15,
-        ApLong = 15,
+        public const int ApShort = 15;
+        public const int ApMedium = 15;
+        public const int ApLong = 15;
 
-        DmgShort = 30,
-        DmgMedium = 30,
-        DmgLong = 30
+        public const int DmgShort = 30;
+        public const int DmgMedium = 30;
+        public const int DmgLong = 30;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, DmgShort, DmgMedium, DmgLong };
     }
 
-    enum GAUGE12LEAD
+    public static class GAUGE12LEAD
     {
-        PrcShort = 2,
-        PrcMedium = -2,
-        PrcLong = -7,
+        public const int PrcShort = 2;
+        public const int PrcMedium = -2;
+        public const int PrcLong = -7;
 
-        ApShort = 1,
-        ApMedium = 1,
-        ApLong = 0,
+        public const int ApShort = 1;
+        public const int ApMedium = 1;
+        public const int ApLong = 0;
 
-        DmgShort = 2,
-        DmgMedium = 2,
-        DmgLong = 2,
+        public const int DmgShort = 2;
+        public const int DmgMedium = 2;
+        public const int DmgLong = 2;
 
-        ShotNumberShort = 6,
-        ShotNumberMedium = 4,
-        ShotNumberLong = 2,
+        public const int ShotNumberShort = 6;
+        public const int ShotNumberMedium = 4;
+        public const int ShotNumberLong = 2;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, 
+            DmgShort, DmgMedium, DmgLong, ShotNumberShort, ShotNumberMedium, ShotNumberLong };
     }
 }

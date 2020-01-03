@@ -35,15 +35,15 @@
             <CheckBox Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckMedium" Checked="CheckMedium_Checked"/>
             <CheckBox Grid.Row="3" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckLong" Checked="CheckLong_Checked"/>
 
-            <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcClose"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcShort"/>
             <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcMedium"/>
             <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcLong"/>
 
-            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppClose"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppShort"/>
             <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppMedium"/>
             <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="ppLong"/>
 
-            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damClose"/>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damShort"/>
             <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damMedium"/>
             <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="damLong"/>
 
