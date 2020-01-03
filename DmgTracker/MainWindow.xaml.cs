@@ -29,6 +29,8 @@ namespace DmgTracker
 
         public List<TextBlock> blocks;
 
+        public List<TextBlock> blocks2;
+
         public int ammoType;
 
         public MainWindow()
@@ -39,19 +41,27 @@ namespace DmgTracker
                 mm9Button, acp45Button, mm10Button, ae50Button,
                 mag357Button, mag44Button, mag500Button,
                 mm556Button, grendelButton, mm762Button, blackoutButton,
-                winmagButton, lapmagButton, bmgButton};
+                winmagButton, lapmagButton, bmgButton,
+                leadButton, steelButton, slugButton, dragonButton, birdshotButton};
 
             blocks = new List<TextBlock>() {
                 prcShort, prcMedium, prcLong,
                 apShort, apMedium, apLong,
-                dmgShort, dmgMedium, dmgLong
-            };
+                dmgShort, dmgMedium, dmgLong};
+
+            blocks2 = new List<TextBlock>() {
+                prcShort2, prcMedium2, prcLong2,
+                apShort2, apMedium2, apLong2,
+                dmgShort2, dmgMedium2, dmgLong2,
+                numShort2, numMedium2, numLong2 };
+        
 
             stats = new List<List<int>>() {
                 MM9.stats, ACP45.stats, MM10.stats, AE50.stats,
                 MAG357.stats, MAG44.stats, MAG500.stats,
                 MM556.stats, GRENDEL.stats, MM762.stats, BLACKOUT.stats,
-                WINMAG.stats, LAPMAG.stats, BMG.stats };
+                WINMAG.stats, LAPMAG.stats, BMG.stats,
+                GAUGE12LEAD.stats, GAUGE12STEEL.stats, GAUGE12SLUG.stats, GAUGE12DRAGON.stats, GAUGE12BIRDSHOT.stats};
 
             brush = new SolidColorBrush(Color.FromRgb(221, 221, 221));
 
@@ -59,7 +69,13 @@ namespace DmgTracker
 
             ButtonAutomationPeer peer =  new ButtonAutomationPeer(mm9Button);
 
+            ButtonAutomationPeer peer2 = new ButtonAutomationPeer(leadButton);
+
             IInvokeProvider invokeProv = peer.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+
+            IInvokeProvider invokeProv2 = peer2.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+
+            invokeProv2.Invoke();
 
             invokeProv.Invoke();
         }
@@ -84,6 +100,30 @@ namespace DmgTracker
         {
             CheckShort.IsChecked = false;
             CheckMedium.IsChecked = false;
+            CalculateHit();
+            CalculateDamage();
+        }
+
+        private void CheckShort2_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckMedium2.IsChecked = false;
+            CheckLong2.IsChecked = false;
+            CalculateHit();
+            CalculateDamage();
+        }
+
+        private void CheckMedium2_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckShort2.IsChecked = false;
+            CheckLong2.IsChecked = false;
+            CalculateHit();
+            CalculateDamage();
+        }
+
+        private void CheckLong2_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckShort2.IsChecked = false;
+            CheckMedium2.IsChecked = false;
             CalculateHit();
             CalculateDamage();
         }
@@ -148,6 +188,26 @@ namespace DmgTracker
             {
                 ammoType = 13;
                 button = bmgButton;
+            } else if (sender == leadButton)
+            {
+                ammoType = 14;
+                button = leadButton;
+            } else if (sender == steelButton)
+            {
+                ammoType = 15;
+                button = steelButton;
+            } else if (sender == slugButton)
+            {
+                ammoType = 16;
+                button = slugButton;
+            } else if (sender == dragonButton)
+            {
+                ammoType = 17;
+                button = dragonButton;
+            } else if (sender == birdshotButton)
+            {
+                ammoType = 18;
+                button = birdshotButton;
             }
 
             foreach (Button tempButton in buttons)
@@ -159,12 +219,30 @@ namespace DmgTracker
 
             ammo = button;
 
-            for (int i = 0; i < blocks.Count; i++)
-            {
-                blocks[i].Text = stats[ammoType][i].ToString();
-            }
+            if (ammoType <= 13)
+                for (int i = 0; i < blocks.Count; i++)
+                {
+                    blocks[i].Text = stats[ammoType][i].ToString();
+                }
+
+            if (ammoType > 13)
+                for (int i = 0; i < blocks2.Count; i++)
+                {
+                    blocks2[i].Text = stats[ammoType][i].ToString();
+                }
 
             CalculateHit();
+            CalculateDamage();
+        }
+
+        private void EnemyArmorCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CalculateHit();
+            CalculateDamage();
+        }
+
+        private void RoundsOnTargetCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             CalculateDamage();
         }
 
@@ -174,7 +252,8 @@ namespace DmgTracker
             {
                 ShotsHit.Content = ChanceToHit(3);
 
-            } else if (CheckMedium.IsChecked == true)
+            }
+            else if (CheckMedium.IsChecked == true)
             {
                 ShotsHit.Content = ChanceToHit(4);
             }
@@ -182,6 +261,22 @@ namespace DmgTracker
             {
                 ShotsHit.Content = ChanceToHit(5);
             }
+        }
+
+        private string ChanceToHit(int range)
+        {
+            int shot = stats[ammoType][range];
+            int armor = Int32.Parse(EnemyArmorCombo.Text);
+
+            int result = armor - shot;
+
+            if (result <= 1)
+                return "All";
+
+            if (result > 6)
+                return "None";
+
+            return result.ToString();
         }
 
         private void CalculateDamage()
@@ -201,22 +296,6 @@ namespace DmgTracker
             }
         }
 
-        private string ChanceToHit(int range)
-        {
-            int shot = stats[ammoType][range];
-            int armor = Int32.Parse(EnemyArmorCombo.Text);
-
-            int result = armor - shot;
-            
-            if (result <= 1)
-                return "All";
-
-            if (result > 6)
-                return "None";
-
-            return result.ToString();
-        }
-
         private double RawDamage(int singleShotDamage)
         {
             double singleDamage = stats[ammoType][singleShotDamage];
@@ -229,18 +308,8 @@ namespace DmgTracker
             if (shotsHit == "All")
                 return singleDamage * rateOfFire;
 
-            return Math.Round(((singleDamage * rateOfFire) / Double.Parse(shotsHit)),2);
+            return Math.Round(((singleDamage * rateOfFire) / Double.Parse(shotsHit)), 2);
         }
 
-        private void EnemyArmorCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            CalculateHit();
-            CalculateDamage();
-        }
-
-        private void RoundsOnTargetCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            CalculateDamage();
-        }
     }
 }

@@ -278,4 +278,96 @@ namespace DmgTracker
             PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong, 
             DmgShort, DmgMedium, DmgLong, ShotNumberShort, ShotNumberMedium, ShotNumberLong };
     }
+
+    public static class GAUGE12STEEL
+    {
+        public const int PrcShort = 2;
+        public const int PrcMedium = -2;
+        public const int PrcLong = -7;
+
+        public const int ApShort = 2;
+        public const int ApMedium = 2;
+        public const int ApLong = 1;
+
+        public const int DmgShort = 2;
+        public const int DmgMedium = 2;
+        public const int DmgLong = 2;
+
+        public const int ShotNumberShort = 6;
+        public const int ShotNumberMedium = 4;
+        public const int ShotNumberLong = 2;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong,
+            DmgShort, DmgMedium, DmgLong, ShotNumberShort, ShotNumberMedium, ShotNumberLong };
+    }
+
+    public static class GAUGE12SLUG
+    {
+        public const int PrcShort = 0;
+        public const int PrcMedium = 0;
+        public const int PrcLong = -4;
+
+        public const int ApShort = 3;
+        public const int ApMedium = 2;
+        public const int ApLong = 0;
+
+        public const int DmgShort = 11;
+        public const int DmgMedium = 9;
+        public const int DmgLong = 6;
+
+        public const int ShotNumberShort = 1;
+        public const int ShotNumberMedium = 1;
+        public const int ShotNumberLong = 1;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong,
+            DmgShort, DmgMedium, DmgLong, ShotNumberShort, ShotNumberMedium, ShotNumberLong };
+    }
+
+    public static class GAUGE12DRAGON
+    {
+        public const int PrcShort = 3;
+        public const int PrcMedium = -2;
+        public const int PrcLong = 0;
+
+        public const int ApShort = 0;
+        public const int ApMedium = 0;
+        public const int ApLong = 0;
+
+        public const int DmgShort = 10;
+        public const int DmgMedium = 5;
+        public const int DmgLong = 0;
+
+        public const int ShotNumberShort = 1;
+        public const int ShotNumberMedium = 1;
+        public const int ShotNumberLong = 0;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong,
+            DmgShort, DmgMedium, DmgLong, ShotNumberShort, ShotNumberMedium, ShotNumberLong };
+    }
+
+    public static class GAUGE12BIRDSHOT
+    {
+        public const int PrcShort = 3;
+        public const int PrcMedium = -4;
+        public const int PrcLong = 0;
+
+        public const int ApShort = 0;
+        public const int ApMedium = 0;
+        public const int ApLong = 0;
+
+        public const int DmgShort = 1;
+        public const int DmgMedium = 1;
+        public const int DmgLong = 0;
+
+        public const int ShotNumberShort = 9;
+        public const int ShotNumberMedium = 4;
+        public const int ShotNumberLong = 0;
+
+        public static readonly List<int> stats = new List<int>() {
+            PrcShort, PrcMedium, PrcLong, ApShort, ApMedium, ApLong,
+            DmgShort, DmgMedium, DmgLong, ShotNumberShort, ShotNumberMedium, ShotNumberLong };
+    }
 }

@@ -5,185 +5,356 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DmgTracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="380" Width="580" 
-        MinHeight="380" MinWidth="580"
-        MaxHeight="380" MaxWidth="580">
+        Title="MainWindow" Height="400" Width="600" 
+        MinHeight="400" MinWidth="600"
+        MaxHeight="400" MaxWidth="600">
 
-    <Grid Margin="10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="270"/>
-            <ColumnDefinition Width="270"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="180"/>
-            <RowDefinition Height="180"/>
-        </Grid.RowDefinitions>
+    <TabControl>
+        <TabItem Header="Damage 1">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270"/>
+                    <ColumnDefinition Width="270"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="180"/>
+                </Grid.RowDefinitions>
 
-        <Grid Grid.Column="0" Grid.Row="1" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70"/>
-                <ColumnDefinition Width="30"/>
-                <ColumnDefinition Width="50"/>
-                <ColumnDefinition Width="50"/>
-                <ColumnDefinition Width="50"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0">Distance</Label>
-            <Label Grid.Row="1">Short</Label>
-            <Label Grid.Row="2">Medium</Label>
-            <Label Grid.Row="3">Long</Label>
+                <Grid Grid.Column="0" Grid.Row="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0">Distance</Label>
+                    <Label Grid.Row="1">Short</Label>
+                    <Label Grid.Row="2">Medium</Label>
+                    <Label Grid.Row="3">Long</Label>
 
-            <Label Grid.Row="0" Grid.Column="2" Content="PRC" HorizontalAlignment="Center"  VerticalAlignment="Bottom"/>
-            <Label Grid.Row="0" Grid.Column="3" Content="AP" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label Grid.Row="0" Grid.Column="4" Content="DMG" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Grid.Row="0" Grid.Column="2" Content="PRC" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                    <Label Grid.Row="0" Grid.Column="3" Content="AP" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Grid.Row="0" Grid.Column="4" Content="DMG" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-            <CheckBox Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Name="CheckShort" Checked="CheckShort_Checked"/>
-            <CheckBox Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckMedium" Checked="CheckMedium_Checked"/>
-            <CheckBox Grid.Row="3" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckLong" Checked="CheckLong_Checked"/>
+                    <CheckBox Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Name="CheckShort" Checked="CheckShort_Checked"/>
+                    <CheckBox Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckMedium" Checked="CheckMedium_Checked"/>
+                    <CheckBox Grid.Row="3" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckLong" Checked="CheckLong_Checked"/>
 
-            <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcShort"/>
-            <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcMedium"/>
-            <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcLong"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcShort"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcMedium"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="prcLong"/>
 
-            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="apShort"/>
-            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="apMedium"/>
-            <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="apLong"/>
+                    <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="apShort"/>
+                    <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="apMedium"/>
+                    <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="apLong"/>
 
-            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="dmgShort"/>
-            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="dmgMedium"/>
-            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="dmgLong"/>
+                    <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="dmgShort"/>
+                    <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="dmgMedium"/>
+                    <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Name="dmgLong"/>
 
-        </Grid>
+                </Grid>
 
-        <Grid Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="7*" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10*" />
+                <Grid Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
 
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0">Ammunition</Label>
-            <Label Grid.Row="1">Light</Label>
-            <Label Grid.Row="2">Medium</Label>
-            <Label Grid.Row="3">Heavy</Label>
-            <Label Grid.Row="4">Special</Label>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0">Ammunition</Label>
+                    <Label Grid.Row="1">Light</Label>
+                    <Label Grid.Row="2">Medium</Label>
+                    <Label Grid.Row="3">Heavy</Label>
+                    <Label Grid.Row="4">Special</Label>
 
-            <Label HorizontalContentAlignment="Center" Grid.Column="1">Pistol</Label>
-            <Label HorizontalContentAlignment="Center" Grid.Column="2">Revolver</Label>
-            <Label HorizontalContentAlignment="Center" Grid.Column="3">Assault</Label>
-            <Label HorizontalContentAlignment="Center" Grid.Column="4">Sniper</Label>
+                    <Label HorizontalContentAlignment="Center" Grid.Column="1">Pistol</Label>
+                    <Label HorizontalContentAlignment="Center" Grid.Column="2">Revolver</Label>
+                    <Label HorizontalContentAlignment="Center" Grid.Column="3">Assault</Label>
+                    <Label HorizontalContentAlignment="Center" Grid.Column="4">Sniper</Label>
 
-            <Button Grid.Column="1" Grid.Row="1" Name="mm9Button" Click="OnAmmoClick">9 mm</Button>
-            <Button Grid.Column="1" Grid.Row="2" Name="acp45Button" Click="OnAmmoClick">.45 ACP</Button>
-            <Button Grid.Column="1" Grid.Row="3" Name="mm10Button" Click="OnAmmoClick">10 mm</Button>
-            <Button Grid.Column="1" Grid.Row="4" Name="ae50Button" Click="OnAmmoClick">.50 AE</Button>
+                    <Button Grid.Column="1" Grid.Row="1" Name="mm9Button" Click="OnAmmoClick">9 mm</Button>
+                    <Button Grid.Column="1" Grid.Row="2" Name="acp45Button" Click="OnAmmoClick">.45 ACP</Button>
+                    <Button Grid.Column="1" Grid.Row="3" Name="mm10Button" Click="OnAmmoClick">10 mm</Button>
+                    <Button Grid.Column="1" Grid.Row="4" Name="ae50Button" Click="OnAmmoClick">.50 AE</Button>
 
-            <Button Grid.Column="2" Grid.Row="2" Name="mag357Button" Click="OnAmmoClick">.357 Magnum</Button>
-            <Button Grid.Column="2" Grid.Row="3" Name="mag44Button" Click="OnAmmoClick">.44 Magnum</Button>
-            <Button Grid.Column="2" Grid.Row="4" Name="mag500Button" Click="OnAmmoClick">.500 S&amp;W Magnum</Button>
+                    <Button Grid.Column="2" Grid.Row="2" Name="mag357Button" Click="OnAmmoClick">.357 Magnum</Button>
+                    <Button Grid.Column="2" Grid.Row="3" Name="mag44Button" Click="OnAmmoClick">.44 Magnum</Button>
+                    <Button Grid.Column="2" Grid.Row="4" Name="mag500Button" Click="OnAmmoClick">.500 S&amp;W Magnum</Button>
 
-            <Button Grid.Column="3" Grid.Row="1" Name="mm556Button" Click="OnAmmoClick">5.56x45 mm</Button>
-            <Button Grid.Column="3" Grid.Row="2" Name="grendelButton" Click="OnAmmoClick">6.5 mm Grendel</Button>
-            <Button Grid.Column="3" Grid.Row="3" Name="mm762Button" Click="OnAmmoClick">7.62x51 mm</Button>
-            <Button Grid.Column="3" Grid.Row="4" Name="blackoutButton" Click="OnAmmoClick">.300 Blackout</Button>
+                    <Button Grid.Column="3" Grid.Row="1" Name="mm556Button" Click="OnAmmoClick">5.56x45 mm</Button>
+                    <Button Grid.Column="3" Grid.Row="2" Name="grendelButton" Click="OnAmmoClick">6.5 mm Grendel</Button>
+                    <Button Grid.Column="3" Grid.Row="3" Name="mm762Button" Click="OnAmmoClick">7.62x51 mm</Button>
+                    <Button Grid.Column="3" Grid.Row="4" Name="blackoutButton" Click="OnAmmoClick">.300 Blackout</Button>
 
-            <Button Grid.Column="4" Grid.Row="2" Name="winmagButton" Click="OnAmmoClick">.300 Win Mag</Button>
-            <Button Grid.Column="4" Grid.Row="3" Name="lapmagButton" Click="OnAmmoClick">.338 Lapua Magnum</Button>
-            <Button Grid.Column="4" Grid.Row="4" Name="bmgButton" Click="OnAmmoClick">.50 BMG</Button>
+                    <Button Grid.Column="4" Grid.Row="2" Name="winmagButton" Click="OnAmmoClick">.300 Win Mag</Button>
+                    <Button Grid.Column="4" Grid.Row="3" Name="lapmagButton" Click="OnAmmoClick">.338 Lapua Magnum</Button>
+                    <Button Grid.Column="4" Grid.Row="4" Name="bmgButton" Click="OnAmmoClick">.50 BMG</Button>
 
 
-        </Grid>
+                </Grid>
 
-        <Grid Grid.Column="1" Grid.Row="1">
+                <Grid Grid.Column="1" Grid.Row="1">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
-            </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock> Rounds <LineBreak/> on Target </TextBlock> 
-            </Label>
-                <ComboBox Grid.Row="0" Grid.Column="1" Width="50" Height="25" Name="RoundsOnTargetCombo" SelectionChanged="RoundsOnTargetCombo_SelectionChanged">
-                <ComboBoxItem IsSelected="True">1</ComboBoxItem>
-                <ComboBoxItem>2</ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem>5</ComboBoxItem>
-                <ComboBoxItem>6</ComboBoxItem>
-                <ComboBoxItem>7</ComboBoxItem>
-                <ComboBoxItem>8</ComboBoxItem>
-                <ComboBoxItem>9</ComboBoxItem>
-                <ComboBoxItem>10</ComboBoxItem>
-                <ComboBoxItem>11</ComboBoxItem>
-                <ComboBoxItem>12</ComboBoxItem>
-                <ComboBoxItem>13</ComboBoxItem>
-                <ComboBoxItem>14</ComboBoxItem>
-                <ComboBoxItem>15</ComboBoxItem>
-                <ComboBoxItem>16</ComboBoxItem>
-                <ComboBoxItem>17</ComboBoxItem>
-                <ComboBoxItem>18</ComboBoxItem>
-                <ComboBoxItem>19</ComboBoxItem>
-                <ComboBoxItem>20</ComboBoxItem>
-            </ComboBox>
+                    <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock> Rounds <LineBreak/> on Target</TextBlock>
+                    </Label>
+                    <ComboBox Grid.Row="0" Grid.Column="1" Width="50" Height="25" Name="RoundsOnTargetCombo" SelectionChanged="RoundsOnTargetCombo_SelectionChanged">
+                        <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                    </ComboBox>
 
-            <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock> Enemy <LineBreak/> Armor</TextBlock>
-            </Label>
-            
-            <ComboBox Grid.Row="0" Grid.Column="4" Width="50" Height="25" Name="EnemyArmorCombo" SelectionChanged="EnemyArmorCombo_SelectionChanged">
-                <ComboBoxItem IsSelected="True">1</ComboBoxItem>
-                <ComboBoxItem>2</ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem>5</ComboBoxItem>
-                <ComboBoxItem>6</ComboBoxItem>
-                <ComboBoxItem>7</ComboBoxItem>
-                <ComboBoxItem>8</ComboBoxItem>
-                <ComboBoxItem>9</ComboBoxItem>
-                <ComboBoxItem>10</ComboBoxItem>
-                <ComboBoxItem>11</ComboBoxItem>
-                <ComboBoxItem>12</ComboBoxItem>
-                <ComboBoxItem>13</ComboBoxItem>
-                <ComboBoxItem>14</ComboBoxItem>
-            </ComboBox>
+                    <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock> Enemy <LineBreak/> Armor</TextBlock>
+                    </Label>
 
-            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock> Hitting on: </TextBlock>
-            </Label>
+                    <ComboBox Grid.Row="0" Grid.Column="4" Width="50" Height="25" Name="EnemyArmorCombo" SelectionChanged="EnemyArmorCombo_SelectionChanged">
+                        <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                    </ComboBox>
 
-            <Label Grid.Row="2" Grid.Column="0" >
-                <TextBlock> Average <LineBreak/> DMG:</TextBlock>
-            </Label>
+                    <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock> Hitting on:</TextBlock>
+                    </Label>
 
-            <Label Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Center" 
+                    <Label Grid.Row="2" Grid.Column="0" >
+                        <TextBlock> Average <LineBreak/> DMG:</TextBlock>
+                    </Label>
+
+                    <Label Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Center" 
                    VerticalAlignment="Center" Name="ShotsHit"/>
 
-            <Label Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center" 
+                    <Label Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center" 
                    VerticalAlignment="Center" Name="Damage"/>
 
-        </Grid>
-    </Grid>
+                </Grid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Damage 2" Height="20" VerticalAlignment="Top">
+            <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="310"/>
+                        <ColumnDefinition Width="230"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="130"/>
+                        <RowDefinition Height="230"/>
+                    </Grid.RowDefinitions>
+
+                <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"> Ammunition</Label>
+
+                    <Button Grid.Row="1" Grid.Column="1" Name="leadButton" Click="OnAmmoClick">Lead</Button>
+                    <Button Grid.Row="1" Grid.Column="2" Name="steelButton" Click="OnAmmoClick">Steel</Button>
+                    <Button Grid.Row="1" Grid.Column="3" Name="slugButton" Click="OnAmmoClick">Slug</Button>
+                    <Button Grid.Row="1" Grid.Column="4" Name="dragonButton" Click="OnAmmoClick">
+                        <TextBlock TextAlignment="Center"> Dragon's <LineBreak/> Breath</TextBlock>
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="5" Name="birdshotButton" Click="OnAmmoClick">Birdshot</Button>
+
+                </Grid>
+                
+                <Grid Grid.Column="0" Grid.Row="1" Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    
+                    <Label Grid.Row="0">Distance</Label>
+                    <Label Grid.Row="1">Short</Label>
+                    <Label Grid.Row="2">Medium</Label>
+                    <Label Grid.Row="3">Long</Label>
+
+                    <Label Grid.Row="0" Grid.Column="2" Content="PRC" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                    <Label Grid.Row="0" Grid.Column="3" Content="AP" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Grid.Row="0" Grid.Column="4" Content="DMG" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Grid.Row="0" Grid.Column="5" Content="NUM" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <CheckBox Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Center" Name="CheckShort2" VerticalAlignment="Center" Checked="CheckShort2_Checked"/>
+                    <CheckBox Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center" Name="CheckMedium2" VerticalAlignment="Center" Checked="CheckMedium2_Checked"/>
+                    <CheckBox Grid.Row="3" Grid.Column="1" Content="" HorizontalAlignment="Center" Name="CheckLong2" VerticalAlignment="Center" Checked="CheckLong2_Checked"/>
+
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" Text="" Name="prcShort2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" Text="" Name="prcMedium2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" Text="" Name="prcLong2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" Text="" Name="apShort2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" Text="" Name="apMedium2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Text="" Name="apLong2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="1" Text="" Name="dmgShort2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="2" Text="" Name="dmgMedium2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" Text="" Name="dmgLong2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Column="5" HorizontalAlignment="Center" Grid.Row="1" Text="" Name="numShort2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="5" HorizontalAlignment="Center" Grid.Row="2" Text="" Name="numMedium2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="5" HorizontalAlignment="Center" Grid.Row="3" Text="" Name="numLong2" TextWrapping="Wrap" VerticalAlignment="Center"/>
+
+                </Grid>
+
+                <Grid Grid.Column="1" Grid.Row="1">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock> Rounds <LineBreak/> on Target</TextBlock>
+                    </Label>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Width="50" Height="25" SelectionChanged="RoundsOnTargetCombo_SelectionChanged">
+                        <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                    </ComboBox>
+
+                    <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock> Enemy <LineBreak/> Armor</TextBlock>
+                    </Label>
+
+                    <ComboBox Grid.Row="0" Grid.Column="1" Width="50" Height="25" SelectionChanged="EnemyArmorCombo_SelectionChanged">
+                        <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                    </ComboBox>
+
+                    <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock> Hitting on:</TextBlock>
+                    </Label>
+
+                    <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock> Average <LineBreak/> DMG:</TextBlock>
+                    </Label>
+
+                    <Label Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" Name="ShotsHit2"/>
+
+                    <Label Grid.Row="3" Grid.Column="1" Content="" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" Name="Damage2"/>
+
+                </Grid>
+            </Grid>
+        </TabItem>
+    </TabControl>
+
+    
 </Window>
