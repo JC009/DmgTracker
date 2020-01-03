@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Peers;
+using System.Windows.Automation.Provider;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -26,6 +28,8 @@ namespace DmgTracker
         public List<List<int>> stats;
 
         public List<TextBlock> blocks;
+
+        public int ammoType;
 
         public MainWindow()
         {
@@ -50,30 +54,42 @@ namespace DmgTracker
                 WINMAG.stats, LAPMAG.stats, BMG.stats };
 
             brush = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            CheckShort.IsChecked = true;
+
+            ButtonAutomationPeer peer =  new ButtonAutomationPeer(mm9Button);
+
+            IInvokeProvider invokeProv = peer.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+
+            invokeProv.Invoke();
         }
 
         private void CheckShort_Checked(object sender, RoutedEventArgs e)
         {
             CheckMedium.IsChecked = false;
             CheckLong.IsChecked = false;
+            CalculateHit();
+            CalculateDamage();
         }
 
         private void CheckMedium_Checked(object sender, RoutedEventArgs e)
         {
             CheckShort.IsChecked = false;
             CheckLong.IsChecked = false;
+            CalculateHit();
+            CalculateDamage();
         }
 
         private void CheckLong_Checked(object sender, RoutedEventArgs e)
         {
             CheckShort.IsChecked = false;
             CheckMedium.IsChecked = false;
+            CalculateHit();
+            CalculateDamage();
         }
 
         private void OnAmmoClick(object sender, RoutedEventArgs e)
         {
-            int ammoType = 0;
-
             Button button = mm9Button;
 
             if (sender == mm9Button)
@@ -147,6 +163,84 @@ namespace DmgTracker
             {
                 blocks[i].Text = stats[ammoType][i].ToString();
             }
+
+            CalculateHit();
+            CalculateDamage();
+        }
+
+        private void CalculateHit()
+        {
+            if (CheckShort.IsChecked == true)
+            {
+                ShotsHit.Content = ChanceToHit(3);
+
+            } else if (CheckMedium.IsChecked == true)
+            {
+                ShotsHit.Content = ChanceToHit(4);
+            }
+            else if (CheckLong.IsChecked == true)
+            {
+                ShotsHit.Content = ChanceToHit(5);
+            }
+        }
+
+        private void CalculateDamage()
+        {
+            if (CheckShort.IsChecked == true)
+            {
+                Damage.Content = RawDamage(6);
+
+            }
+            else if (CheckMedium.IsChecked == true)
+            {
+                Damage.Content = RawDamage(7);
+            }
+            else if (CheckLong.IsChecked == true)
+            {
+                Damage.Content = RawDamage(8);
+            }
+        }
+
+        private string ChanceToHit(int range)
+        {
+            int shot = stats[ammoType][range];
+            int armor = Int32.Parse(EnemyArmorCombo.Text);
+
+            int result = armor - shot;
+            
+            if (result <= 1)
+                return "All";
+
+            if (result > 6)
+                return "None";
+
+            return result.ToString();
+        }
+
+        private double RawDamage(int singleShotDamage)
+        {
+            double singleDamage = stats[ammoType][singleShotDamage];
+            double rateOfFire = Double.Parse(RoundsOnTargetCombo.Text);
+            string shotsHit = ShotsHit.Content.ToString();
+
+            if (shotsHit == "None")
+                return 0;
+
+            if (shotsHit == "All")
+                return singleDamage * rateOfFire;
+
+            return Math.Round(((singleDamage * rateOfFire) / Double.Parse(shotsHit)),2);
+        }
+
+        private void EnemyArmorCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CalculateHit();
+            CalculateDamage();
+        }
+
+        private void RoundsOnTargetCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CalculateDamage();
         }
     }
 }

@@ -5,10 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DmgTracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="370" Width="546">
-    <Grid Height="360">
+        Title="MainWindow" Height="380" Width="580" 
+        MinHeight="380" MinWidth="580"
+        MaxHeight="380" MaxWidth="580">
 
-        <Grid Margin="10,170,260,70">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270"/>
+            <ColumnDefinition Width="270"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="180"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="1" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="70"/>
                 <ColumnDefinition Width="30"/>
@@ -27,9 +38,9 @@
             <Label Grid.Row="2">Medium</Label>
             <Label Grid.Row="3">Long</Label>
 
-            <Label Grid.Row="0" Grid.Column="2" Content="PRC" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="18"/>
-            <Label Grid.Row="0" Grid.Column="3" Content="AP" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
-            <Label Grid.Row="0" Grid.Column="4" Content="DMG" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+            <Label Grid.Row="0" Grid.Column="2" Content="PRC" HorizontalAlignment="Center"  VerticalAlignment="Bottom"/>
+            <Label Grid.Row="0" Grid.Column="3" Content="AP" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="4" Content="DMG" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <CheckBox Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Name="CheckShort" Checked="CheckShort_Checked"/>
             <CheckBox Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" Name="CheckMedium" Checked="CheckMedium_Checked"/>
@@ -49,7 +60,7 @@
 
         </Grid>
 
-        <Grid Margin="10,10,10,200" >
+        <Grid Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="7*" />
                 <ColumnDefinition Width="10*" />
@@ -94,6 +105,84 @@
             <Button Grid.Column="4" Grid.Row="3" Name="lapmagButton" Click="OnAmmoClick">.338 Lapua Magnum</Button>
             <Button Grid.Column="4" Grid.Row="4" Name="bmgButton" Click="OnAmmoClick">.50 BMG</Button>
 
+
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock> Rounds <LineBreak/> on Target </TextBlock> 
+            </Label>
+                <ComboBox Grid.Row="0" Grid.Column="1" Width="50" Height="25" Name="RoundsOnTargetCombo" SelectionChanged="RoundsOnTargetCombo_SelectionChanged">
+                <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
+                <ComboBoxItem>7</ComboBoxItem>
+                <ComboBoxItem>8</ComboBoxItem>
+                <ComboBoxItem>9</ComboBoxItem>
+                <ComboBoxItem>10</ComboBoxItem>
+                <ComboBoxItem>11</ComboBoxItem>
+                <ComboBoxItem>12</ComboBoxItem>
+                <ComboBoxItem>13</ComboBoxItem>
+                <ComboBoxItem>14</ComboBoxItem>
+                <ComboBoxItem>15</ComboBoxItem>
+                <ComboBoxItem>16</ComboBoxItem>
+                <ComboBoxItem>17</ComboBoxItem>
+                <ComboBoxItem>18</ComboBoxItem>
+                <ComboBoxItem>19</ComboBoxItem>
+                <ComboBoxItem>20</ComboBoxItem>
+            </ComboBox>
+
+            <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock> Enemy <LineBreak/> Armor</TextBlock>
+            </Label>
+            
+            <ComboBox Grid.Row="0" Grid.Column="4" Width="50" Height="25" Name="EnemyArmorCombo" SelectionChanged="EnemyArmorCombo_SelectionChanged">
+                <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
+                <ComboBoxItem>7</ComboBoxItem>
+                <ComboBoxItem>8</ComboBoxItem>
+                <ComboBoxItem>9</ComboBoxItem>
+                <ComboBoxItem>10</ComboBoxItem>
+                <ComboBoxItem>11</ComboBoxItem>
+                <ComboBoxItem>12</ComboBoxItem>
+                <ComboBoxItem>13</ComboBoxItem>
+                <ComboBoxItem>14</ComboBoxItem>
+            </ComboBox>
+
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock> Hitting on: </TextBlock>
+            </Label>
+
+            <Label Grid.Row="2" Grid.Column="0" >
+                <TextBlock> Average <LineBreak/> DMG:</TextBlock>
+            </Label>
+
+            <Label Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" Name="ShotsHit"/>
+
+            <Label Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" Name="Damage"/>
 
         </Grid>
     </Grid>
